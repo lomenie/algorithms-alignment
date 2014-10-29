@@ -1,0 +1,29 @@
+set term postscript eps enhanced color solid "Arial"
+set size square
+set grid
+set data style lines
+set style line 1 lt 1 lw 5
+set style line 2 lt 2 lw 5
+set style line 3 lt 3 lw 5
+set style line 4 lt 4 lw 5
+set style line 5 lt 5 lw 5
+set style line 6 lt 6 lw 5
+set style line 7 lt 7 lw 5
+set style line 8 lt 7 lw 1
+
+set xlabel "False Positive Rate" 1
+set ylabel "True Positive Rate" 1
+set xrange [-0.01:1.01]
+set yrange [-0.01:1.01]
+set xtics 0,0.1
+set ytics 0,0.1
+set key bottom right nobox
+set title "ROC Curve: Pos vs. Neg"
+set output "pl1.eps"
+plot "foo-roc" title "GSIM-2D" ls 1, x title "Random"
+
+set xlabel "GSIM-2D Score" 1
+set ylabel "Cumulative Proportion" 1
+set title "Cumulative Histograms: Pos vs. Neg"
+set output "pl2.eps"
+plot "foo-neg" title "Decoys" ls 1, "foo-pos" title "Actives" ls 2

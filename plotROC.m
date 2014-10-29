@@ -1,0 +1,23 @@
+% Blos50 = importdata('q2output/BLOSUM50-roc')
+% Blos62 = importdata('q2output/BLOSUM62-roc')
+% MATIO = importdata('q2output/MATIO-roc')
+% PAM100 = importdata('q2output/PAM100-roc')
+% PAM250 = importdata('q2output/PAM250-roc')
+% 
+% plot(...
+% Blos50(:,1), Blos50(:,2),...
+% Blos62(:,1), Blos62(:,2),...
+% MATIO(:,1), MATIO(:,2),...
+% PAM100(:,1),PAM100(:,2),...
+% PAM250(:,1),PAM250(:,2))
+% 
+% legend('BLOSUM50','BLUSUM62','MATIO','PAM100','PAM250','Location''SouthEast')
+
+Blos50 = importdata('q4output/temp-roc')
+PAM250 = importdata('q4output/BLOSUM50-roc')
+
+plot(...
+Blos50(:,1), Blos50(:,2),...
+PAM250(:,1),PAM250(:,2))
+
+legend('Optimized','Original','Location','SouthEast')
